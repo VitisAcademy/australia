@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Австралия</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/draggabilly.pkgd.min.js"></script>
+  <script src="js/db.js"></script>
+</head>
+<body>
+<div class="ave">
+  <div class="ave__title">Введите email</div>
+  <input type="email" maxlength="40" autocomplete="off" onkeyup="checkValidate(this)" autofocus class="ave__input">
+  <div class="ave__button button" onclick="logIn()">Продолжить</div>
+</div>
+<div class="header">
+  <div class="header__menu" onclick="toggleHamburger()"></div>
+  <div class="header__title">Журналист</div>
+</div>
+<div class="main">
+  <div class="task">
+    <div class="lock hidden"></div>
+    <div class="info">
+      <div class="info__title">Помогите журналисту написать статью. Для этого заполните пробелы в предложениях.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page scribe left">
+      <div class="scribe__title">
+          Маркетологов звали Компания Deutsch & Sons. Они начали продвигать вино на американский рынок в
+          <input type="number" maxlength="4" autocomplete="off" class="scribe__input" style='width: calc(66px + (74 - 66) * ((100vw - 320px) / 880))'>
+          году. Американскому потребителю это вино было легко понять с самого начала: белое и красное, английское название, легко узнаваемое, характерное для Австралии животное -
+          <input type="text" maxlength="7" autocomplete="off" class="scribe__input" style='width: calc(116px + (130 - 116) * ((100vw - 320px) / 880))'>
+          на этикетке.<br>Прижилось и
+          <input type="text" maxlength="3" autocomplete="off" class="scribe__input" style='width: calc(50px + (58 - 50) * ((100vw - 320px) / 880))'>
+          бренда, написанное маленькими буквами и помещенное в квадратные скобки, что делало дизайн этикетки достаточно простым и понятным для потребителя.<br>Проект был предназначен специально для США и оказался самым успешным за всю винную историю этой страны – в первый же год было продано около 3
+          <input type="text" maxlength="9" autocomplete="off" class="scribe__input" style='width: calc(149px + (167 - 149) * ((100vw - 320px) / 880))'>
+          бутылок вина.<br>В
+          <input type="number" maxlength="4" autocomplete="off" class="scribe__input" style='width: calc(66px + (74 - 66) * ((100vw - 320px) / 880))'>
+          году продажи бренда росли с потрясающей скоростью – 446%.<br>В
+          <input type="number" maxlength="4" autocomplete="off" class="scribe__input" style='width: calc(66px + (74 - 66) * ((100vw - 320px) / 880))'>
+          в США было продано уже 103 миллиона бутылок. Casella Wines стала самым крупным
+          <input type="text" maxlength="10" autocomplete="off" class="scribe__input" style='width: calc(165px + (185 - 165) * ((100vw - 320px) / 880))'>
+          вина в Америку.<br>По всему миру сейчас продается около 144 миллионов бутылок в год. Аналогичный американскому, успех ждал эти вина и в
+          <input type="text" maxlength="14" autocomplete="off" class="scribe__input" style='width: calc(231px + (259 - 231) * ((100vw - 320px) / 880))'>.
+          , где объем импортируемых вин [yellow tail] превысил весь импорт в эту страну из
+          <input type="text" maxlength="7" autocomplete="off" class="scribe__input" style='width: calc(116px + (130 - 116) * ((100vw - 320px) / 880))'>
+      </div>
+      <div class=" button" onclick="scoreButton(0);scribeCheck()">Нажмите для завершения!</div>
+    </div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden" style="z-index: 3"></div>
+    <div class="info" style="z-index: 2">
+      <div class="info__title">Выберите подходящие ноты для сорта Зинфандель.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page one left" style="z-index: 1">
+      <div class="one__grid">
+        <div class="one__categories oneM"></div>
+        <div class="one__bottle" style="background: url('img/sh.png') no-repeat center/cover"></div>
+      </div>
+      <div class="button" onclick="scoreButton(1);sortOneScore()">Нажмите для завершения!</div>
+    </div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden"></div>
+    <div class="info">
+      <div class="info__title">Прочитайте внимательно вопрос. Дайте развёрнутый ответ в комментариях к уроку.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page asked left">
+      <div class="asked__title"></div>
+      <div class=" button" onclick="endButton()">Дать ответ!</div>
+    </div>
+  </div>
+</div>
+<div class="footer"></div>
+<div class="menu menu__off">
+  <div class="menu__content"></div>
+</div>
+<script src="js/scribe.js"></script>
+<script src="js/sort_one.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
